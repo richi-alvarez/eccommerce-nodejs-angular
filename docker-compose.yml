@@ -10,7 +10,7 @@ services:
     links:
       - mongoService
     volumes:
-      - .:/usr/src/app
+      - ./back:/usr/src/app
   
   mongoService:
     container_name: mymongodatabase
