@@ -5,7 +5,7 @@ var bodyparser = require('body-parser');
 var mongoose = require('mongoose');
 var port = process.env.port || 4202;
 
-//var cliente_route = require('./routes/cliente');
+var cliente_route = require('./routes/cliente');
 var admin_route = require('./routes/admin');
 
 mongoose.connect('mongodb://127.0.0.1:27017/tienda2',{useUnifiedTopology: true, useNewUrlParser: true}, (err, res)=>{
@@ -29,7 +29,7 @@ app.use((req,res,next)=>{
     next();
 });
 
-//app.use('/api',cliente_route);
+app.use('/api',cliente_route);
 app.use('/api',admin_route);
 
 module.exports = app;
